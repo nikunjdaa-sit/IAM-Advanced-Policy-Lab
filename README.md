@@ -24,7 +24,7 @@ Every policy was validated in the **IAM Policy Simulator** before being attached
 ---
 
 ## 🧱 Architecture
-![Architecture Diagram](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/ce7b708fce6e5b11165769ded41106c4af060bc8/iam_policy_lab_architecture.png)
+![Architecture Diagram](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/229d2b2d52a9c0fcc01f495f9be4d8dc7de94d2e/iam_policy_lab_architecture_accurate.png)
 
 
 | Resource | Purpose |
@@ -168,16 +168,17 @@ Restricts S3 read access to a 09:00–18:00 UTC window using `DateGreaterThan` /
 
 | # | Screenshot | Shows |
 |---|---|---|
-| 1 | `policy1-json.png` | Policy 1 JSON with resource-level ARN |
-| 2 | `policy2-json.png` | Policy 2 JSON with MFA condition block |
-| 3 | `policy3-json.png` | Policy 3 JSON with time-based conditions |
-| 4 | `simulator-allow-deny.png` | Policy 1 — allowed bucket vs. restricted bucket |
-| 5 | `simulator-mfa.png` | Policy 2 — denied without MFA vs. lifted with MFA |
-| 6 | `simulator-time.png` | Policy 3 — business hours vs. after hours |
-| 7 | `user-permissions.png` | `policy-test-user` with all customer-managed policies attached |
-| 8 | `access-analyzer.png` | Access Analyzer — 0 findings |
+| 1 |  ![Create S3 Bucket]()
+| 2 | | IAM User Group |
+| 3 | | Policy 1 JSON with resource-level ARN |
+| 4 | | Policy 2 JSON with MFA condition block |
+| 5 | | Policy 3 JSON with time-based conditions |
+| 6 | | Policy 1 — allowed bucket vs. restricted bucket |
+| 7 | | Policy 2 — denied without MFA vs. lifted with MFA |
+|  | | Policy 3 — business hours vs. after hours |
+| 7 | | `policy-test-user` with all customer-managed policies attached |
+| 8 | | Access Analyzer — 0 findings |
 
-*(Screenshots stored in `/screenshots`)*
 
 ---
 
