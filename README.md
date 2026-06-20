@@ -3,12 +3,7 @@ Designed and tested three custom IAM policies — resource-level restriction, MF
 
 # 🔐 AWS IAM Advanced Policy Lab
 
-> Designing and testing custom IAM policies with resource-level restrictions, MFA enforcement, and time-based access controls — entirely through the AWS Console.
-
-![AWS](https://img.shields.io/badge/AWS-IAM-FF9900?style=flat&logo=amazon-aws&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Complete-1A6B3A)
-![Cost](https://img.shields.io/badge/Cost-%240.00-1A6B3A)
-
+Designing and testing custom IAM policies with resource-level restrictions, MFA enforcement, and time-based access controls — entirely through the AWS Console.
 ---
 
 ## 📋 Overview
@@ -24,7 +19,7 @@ Every policy was validated in the **IAM Policy Simulator** before being attached
 ---
 
 ## 🧱 Architecture
-![Architecture Diagram](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/229d2b2d52a9c0fcc01f495f9be4d8dc7de94d2e/iam_policy_lab_architecture_accurate.png)
+| Architecture Diagram |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/iam_policy_lab_architecture_accurate.png)
 
 
 | Resource | Purpose |
@@ -167,17 +162,17 @@ Restricts S3 read access to a 09:00–18:00 UTC window using `DateGreaterThan` /
 ## 📸 Screenshots
 
 | # | Screenshot | Shows |
-|---|---|---|
-| 1 |  ![Create S3 Bucket]()
-| 2 | | IAM User Group |
-| 3 | | Policy 1 JSON with resource-level ARN |
-| 4 | | Policy 2 JSON with MFA condition block |
-| 5 | | Policy 3 JSON with time-based conditions |
-| 6 | | Policy 1 — allowed bucket vs. restricted bucket |
-| 7 | | Policy 2 — denied without MFA vs. lifted with MFA |
-|  | | Policy 3 — business hours vs. after hours |
-| 7 | | `policy-test-user` with all customer-managed policies attached |
-| 8 | | Access Analyzer — 0 findings |
+| 1 | | Create S3 Bucket |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20142815.png)
+| 2 | | IAM User Group |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20172911.png)
+| 3 | | Policy 1 JSON with resource-level ARN |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20145522.png)
+| 4 | | Policy 2 JSON with MFA condition block |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20150714.png
+)
+| 5 | | Policy 3 JSON with time-based conditions |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20152050.png)
+| 6 | | Policy 1 — allowed bucket vs. restricted bucket |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20160248.png)![imale link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20160432.png)
+| 7 | | Policy 2 — denied without MFA vs. allowed with MFA |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20164604.png)![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20164505.png)
+| 8 | | Policy 3 — business hours vs. after hours |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20165816.png)![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20165849.png)
+| 9 | | `policy-test-user` with all customer-managed policies attached |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20172515.png)
+| 10 | | Access Analyzer — 0 findings |![image link](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/762e8cefc5629cf2c30444e8f2324bf7acc3932b/Screenshot%202026-06-19%20172311.png)
 
 
 ---
