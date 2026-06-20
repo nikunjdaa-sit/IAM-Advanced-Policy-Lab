@@ -24,23 +24,8 @@ Every policy was validated in the **IAM Policy Simulator** before being attached
 ---
 
 ## 🧱 Architecture
+![Architecture Diagram](https://github.com/nikunjdaa-sit/IAM-Advanced-Policy-Lab/blob/ce7b708fce6e5b11165769ded41106c4af060bc8/iam_policy_lab_architecture.png)
 
-```
-                     ┌──────────────────────────┐
-                     │      policy-test-user      │
-                     └──────────────┬─────────────┘
-                                    │
-                ┌───────────────────┼───────────────────┐
-                │                   │                   │
-   ┌────────────▼───────┐ ┌─────────▼──────────┐ ┌──────▼───────────────┐
-   │ S3-Specific-Bucket- │ │ Deny-All-Without-   │ │ S3-Business-Hours-   │
-   │ ReadOnly            │ │ MFA                 │ │ Only                 │
-   │                      │ │                      │ │                       │
-   │ Allow: GetObject,    │ │ Deny: *  unless      │ │ Allow: S3 read 09–18  │
-   │ ListBucket           │ │ MFA present          │ │ Deny: S3 * after 18   │
-   │ Resource: 1 bucket   │ │ Resource: *          │ │ Resource: *           │
-   └──────────────────────┘ └──────────────────────┘ └───────────────────────┘
-```
 
 | Resource | Purpose |
 |---|---|
@@ -209,42 +194,4 @@ Restricts S3 read access to a 09:00–18:00 UTC window using `DateGreaterThan` /
 ## 🧰 Tools
 
 AWS Console only — no SDK, no code, no third-party tools. All policies were authored and tested using native AWS IAM features available on the Free Tier.
-
-5. Policy design:-
-   Policy 1 — S3-Specific-Bucket-ReadOnly
-   Grants s3:GetObject and s3:ListBucket against one explicit bucket ARN instead of Resource: "*".
-   ```json
-   {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": ["s3:GetObject", "s3:ListBucket"],
-      "Resource": [
-     "arn:aws:s3:::nikunj-allowed-bucket",
-        "arn:aws:s3:::nikunj-allowed-bucket/*"
-      ]
-     }
-   ]
- }```
-
-Policy 2 — Deny-All-Without-MFA
-A blanket explicit deny on every action and resource, conditioned on the absence of MFA. BoolIfExists ensures the deny only fires when MFA truly wasn't used.
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "DenyAllWithoutMFA",
-      "Effect": "Deny",
-      "Action": "*",
-      "Resource": "*",
-      "Condition": {
-        "BoolIfExists": { "aws:MultiFactorAuthPresent": "false" }
-       }
-     }
-  ]
-}```
-
-
 
